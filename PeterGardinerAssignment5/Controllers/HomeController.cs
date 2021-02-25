@@ -29,6 +29,7 @@ namespace PeterGardinerAssignment5.Controllers
         {
             return View(new ProjectListViewModel
             {
+                //return correct page and make them the right size
                 Products = _repository.Projects.OrderBy(p => p.BookId).Skip((page - 1) * PageSize).Take(PageSize),
                 PagingInfo = new PagingInfo
                 {

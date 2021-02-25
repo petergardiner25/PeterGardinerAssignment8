@@ -19,6 +19,8 @@ namespace PeterGardinerAssignment5.Models
                 context.Database.Migrate();
             }
 
+
+            //add seed data
             if(!context.Projects.Any())
             {
                 context.Projects.AddRange(

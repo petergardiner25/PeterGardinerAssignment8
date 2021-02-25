@@ -56,6 +56,7 @@ namespace PeterGardinerAssignment5
 
             app.UseEndpoints(endpoints =>
             {
+                //edited urls
                 endpoints.MapControllerRoute(
                     "pagination",
                     "P{page}",
