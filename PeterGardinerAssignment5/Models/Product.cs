@@ -26,5 +26,7 @@ namespace PeterGardinerAssignment5.Models
         public string Category { get; set; }
         [Required]
         public string Price { get; set; }
+        [Required]
+        public int pages { get; set; }
     }
 }

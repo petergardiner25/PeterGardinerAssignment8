@@ -2,21 +2,30 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IQueryable<Product>
+@model ProjectListViewModel
 
-<div >
+<div>
     <h1 class="display-4 font-weight-bold">Bookstore</h1>
 </div>
 
-@foreach (var x in Model)
+@foreach (var x in Model.Products)
 {
-    <div class="text-center">
-        <h4>@x.Title</h4>
+    <div class="text-center card card-outline-primary m-3" >
+        <h4><a href="#" dat-toggle="tooltip" title="Read me"> @x.Title</a></h4>
         <h5>@x.AuthorFirst @x.AuthorLast</h5>
         <p>@x.Publisher</p>
-        <p>@x.ISBN</p>
+        <p class="text-muted">@x.ISBN</p>
         <p>@x.Category</p>
+        <p>Pages: @x.pages  <span class="badge badge-secondary">NEW!</span></p>
         <p>@x.Price</p>
 
     </div>
 }
+
+<div page-model="@Model.PagingInfo" page-action="Index" page-classses-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right"></div>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
