@@ -1,0 +1,14 @@
+﻿
+
+@model Product
+
+<div class="text-center card card-outline-primary m-3">
+    <h4><a href="#" dat-toggle="tooltip" title="Read me"> @Model.Title</a></h4>
+    <h5>@Model.AuthorFirst @Model.AuthorLast</h5>
+    <p>@Model.Publisher</p>
+    <p class="text-muted">@Model.ISBN</p>
+    <p>@Model.Category</p>
+    <p>Pages: @Model.pages  <span class="badge badge-secondary">NEW!</span></p>
+    <p>@Model.Price</p>
+
+</div>
