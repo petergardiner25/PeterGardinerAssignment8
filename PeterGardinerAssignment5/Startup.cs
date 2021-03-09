@@ -28,7 +28,7 @@ namespace PeterGardinerAssignment5
             services.AddControllersWithViews();
             services.AddDbContext<ProductDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:ProductConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:ProductConnection"]);
             });
 
             services.AddScoped<IProductRepository, EFProductRepository>();
