@@ -56,15 +56,15 @@ namespace PeterGardinerAssignment5
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("page","{category}/{page:int}", new {Controller = "Home", action = "Index"});
+                endpoints.MapControllerRoute("page","{category}/{pageNum:int}", new {Controller = "Home", action = "Index"});
 
-                endpoints.MapControllerRoute("page2", "{page:int}", new { Controller = "Home", action = "Index" });
+                endpoints.MapControllerRoute("page2", "{pageNum:int}", new { Controller = "Home", action = "Index" });
 
-                endpoints.MapControllerRoute("category", "{category}", new { Controller = "Home", action = "Index", page = 1 });
+                endpoints.MapControllerRoute("category", "{category}", new { Controller = "Home", action = "Index", pageNum = 1 });
                 //edited urls
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "P{page}",
+                    "P{pageNum}",
                     new { controller = "Home", action = "Index" } );
 
                 endpoints.MapDefaultControllerRoute();
