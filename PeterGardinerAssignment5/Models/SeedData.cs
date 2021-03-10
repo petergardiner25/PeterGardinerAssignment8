@@ -34,7 +34,7 @@ namespace PeterGardinerAssignment5.Models
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
                         Category = "Fiction, Classic",
-                        Price = "$9.95",
+                        Price = 9.95,
                         pages = 1488
                     },
 
@@ -46,7 +46,7 @@ namespace PeterGardinerAssignment5.Models
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
                         Category = "Non-Fiction, Biography",
-                        Price = "$14.58",
+                        Price = 14.58,
                         pages = 944
 
                     },
@@ -59,7 +59,7 @@ namespace PeterGardinerAssignment5.Models
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
                         Category = "Non-Fiction, Biography",
-                        Price = "$21.54",
+                        Price = 21.54,
                         pages = 832
 
                     },
@@ -72,7 +72,7 @@ namespace PeterGardinerAssignment5.Models
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
                         Category = "Non-Fiction",
-                        Price = "$20000.54",
+                        Price = 20000.54,
                         pages = 40
                     },
 
@@ -84,7 +84,7 @@ namespace PeterGardinerAssignment5.Models
                         Publisher = "Your mom",
                         ISBN = "978-0553384611",
                         Category = "Fiction",
-                        Price = "$2.54",
+                        Price = 2.54,
                         pages = 800
                     },
 
@@ -96,7 +96,7 @@ namespace PeterGardinerAssignment5.Models
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
                         Category = "Non-Fiction",
-                        Price = "$20.54",
+                        Price = 20.54,
                         pages = 300
                     }
 

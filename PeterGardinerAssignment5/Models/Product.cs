@@ -25,7 +25,7 @@ namespace PeterGardinerAssignment5.Models
         [Required]
         public string Category { get; set; }
         [Required]
-        public string Price { get; set; }
+        public double Price { get; set; }
         [Required]
         //new pages added
         public int pages { get; set; }

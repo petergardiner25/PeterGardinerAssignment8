@@ -36,7 +36,7 @@ namespace PeterGardinerAssignment5.Models
         {
             //this is hard coded make sre it isn't when it comes time to turn in
             
-           return Lines.Sum( e => e.Quantity * 25);
+           return (decimal)Lines.Sum( e => e.Quantity * e.Product.Price);
         }
         
 

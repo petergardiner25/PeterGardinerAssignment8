@@ -8,7 +8,7 @@ using PeterGardinerAssignment5.Models;
 namespace PeterGardinerAssignment5.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20210309193538_Initial")]
+    [Migration("20210310222009_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,9 +39,8 @@ namespace PeterGardinerAssignment5.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Price")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Price")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Publisher")
                         .IsRequired()
