@@ -14,30 +14,32 @@ namespace PeterGardinerAssignment5.Pages
     {
         private IProductRepository repository;
 
-        public CartModel (IProductRepository repo)
+        public CartModel (IProductRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
 
         public Cart Cart { get; set; }
         public string ReturnUrl { get; set; }
 
-        public void OnGet()
+        public void OnGet(string returnUrl)
         {
-            ReturnUrl = ReturnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            ReturnUrl = returnUrl ?? "/";
         }
 
         public IActionResult OnPost(long BookId, string returnUrl)
         {
             Product prod = repository.Projects.FirstOrDefault(p => p.BookId == BookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
-
             Cart.AddItem(prod, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
 
+        public IActionResult OnPostRemove(long BookId, string returnUrl)
+        {
+            Cart.RemoveLine(Cart.Lines.First(cl => cl.Product.BookId == BookId).Product);
             return RedirectToPage(new { returnUrl = returnUrl });
         }
     }

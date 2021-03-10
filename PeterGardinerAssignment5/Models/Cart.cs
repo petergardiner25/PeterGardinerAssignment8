@@ -9,7 +9,7 @@ namespace PeterGardinerAssignment5.Models
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem (Product prod, int qty)
+        public virtual void AddItem (Product prod, int qty)
         {
             CartLine line = Lines.Where(p => p.Product.BookId == prod.BookId).FirstOrDefault();
 
@@ -27,10 +27,10 @@ namespace PeterGardinerAssignment5.Models
             }
         }
 
-        public void RemoveLine(Product prod) =>
+        public virtual void RemoveLine(Product prod) =>
             Lines.RemoveAll(x => x.Product.BookId == prod.BookId);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public decimal ComputeTotalSum()
         {
